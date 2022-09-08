@@ -11,22 +11,11 @@ public class GameMode {
     private static JButton ButtonPlayer2 = new JButton(String.valueOf(Game.Human));
 
     private static String firstMod = String.valueOf(Game.Human);
-    private static String secondMod = String.valueOf(Game.Human);
-
-    public static String getGameMod(){
-        return firstMod + "-" + secondMod;
-    }
-
-
-    public static void offModeButtons(boolean x){
-        ButtonPlayer1.setEnabled(x);
-        ButtonPlayer2.setEnabled(x);
-    }
     public static ActionListener gameModeForFirstButton = new ActionListener() {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (ButtonPlayer1.getText().equals(String.valueOf(Game.Human))){
+            if (ButtonPlayer1.getText().equals(String.valueOf(Game.Human))) {
                 getButtonPlayer1().setText(String.valueOf(Game.Robot));
                 firstMod = String.valueOf(Game.Robot);
             } else {
@@ -35,12 +24,12 @@ public class GameMode {
             }
         }
     };
-
+    private static String secondMod = String.valueOf(Game.Human);
     public static ActionListener gameModeForSecondButton = new ActionListener() {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (ButtonPlayer2.getText().equals(String.valueOf(Game.Human))){
+            if (ButtonPlayer2.getText().equals(String.valueOf(Game.Human))) {
                 getButtonPlayer2().setText(String.valueOf(Game.Robot));
                 secondMod = String.valueOf(Game.Robot);
             } else {
@@ -49,6 +38,15 @@ public class GameMode {
             }
         }
     };
+
+    public static String getGameMod() {
+        return firstMod + "-" + secondMod;
+    }
+
+    public static void offModeButtons(boolean x) {
+        ButtonPlayer1.setEnabled(x);
+        ButtonPlayer2.setEnabled(x);
+    }
 
     public static JButton getButtonPlayer1() {
         return ButtonPlayer1;

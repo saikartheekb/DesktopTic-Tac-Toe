@@ -11,6 +11,7 @@ public class TicTacToe extends JFrame {
         setLocation(0, 0);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        setJMenuBar(new Menu());
 
         Container window = getContentPane();
 
@@ -59,8 +60,5 @@ public class TicTacToe extends JFrame {
 
         window.add(ButtonLogic.createButtonField(), BorderLayout.CENTER);
         setVisible(true);
-
     }
-
-
 }

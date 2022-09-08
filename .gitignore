@@ -1,0 +1,5 @@
+# Project exclude paths
+/.gradle/
+/Desktop Tic-Tac-Toe/task/build/
+/Desktop Tic-Tac-Toe/task/out/
+/Desktop Tic-Tac-Toe/task/out/production/classes/

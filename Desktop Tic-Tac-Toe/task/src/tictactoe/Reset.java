@@ -6,8 +6,7 @@ import java.awt.event.ActionListener;
 
 public class Reset {
 
-    private static JButton ButtonStartReset = new JButton("Start");
-
+    private static final JButton ButtonStartReset = new JButton("Start");
 
     public static JButton getButtonStartReset() {
         return ButtonStartReset;
@@ -16,8 +15,10 @@ public class Reset {
     public static void setTextButtonStartReset(String textButtonStartReset) {
         ButtonStartReset.setText(textButtonStartReset);
     }
+
     public static ActionListener putReset = new ActionListener() {
         private boolean startOrReset = true;
+
         @Override
         public void actionPerformed(ActionEvent e) {
             if (startOrReset) {

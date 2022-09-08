@@ -3,22 +3,18 @@ package tictactoe;
 import javax.swing.*;
 import java.util.HashMap;
 
-
 class Winners {
     private static boolean stopGame = false;
-    private static JLabel GameStatus = new JLabel();
+    private static final JLabel GameStatus = new JLabel();
 
 
-    public static JLabel getGameStatus(){
+    public static JLabel getGameStatus() {
         return GameStatus;
     }
-    public static void setGameStatus(String status){
+
+    public static void setGameStatus(String status) {
         GameStatus.setText(status);
     }
-
-
-
-
 
     public static void checkWinX(HashMap<String, Boolean> elements) {
         if (elements.get("X1") && elements.get("X2") && elements.get("X3") ||
@@ -34,6 +30,7 @@ class Winners {
             setGameStatus("X wins");
         }
     }
+
     public static void checkWinO(HashMap<String, Boolean> elements) {
         if (elements.get("O1") && elements.get("O2") && elements.get("O3") ||
                 elements.get("O4") && elements.get("O5") && elements.get("O6") ||
@@ -49,7 +46,7 @@ class Winners {
         }
     }
 
-    public static void resetWiners(){
+    public static void resetWiners() {
         stopGame = false;
     }
 
@@ -68,7 +65,8 @@ class Winners {
             setGameStatus("Draw");
         }
     }
-    public static void checkDrawWithRobot(int move){
+
+    public static void checkDrawWithRobot(int move) {
         if (move > 8) {
             stopGame = true;
             ButtonLogic.setEnabledButton(false);

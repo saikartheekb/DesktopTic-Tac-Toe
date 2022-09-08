@@ -1,14 +1,12 @@
 package tictactoe;
 
-import java.util.HashMap;
 import java.util.Random;
 
 public class Robot {
 
-    private static String charX = "X";
-    private static String charO = "O";
-
-    private static Random random = new Random();
+    private static final String charX = "X";
+    private static final String charO = "O";
+    private static final Random random = new Random();
 
     private static void robotMove(String playChar, int x) {
         if (playChar.equals(charO)) {
@@ -19,7 +17,6 @@ public class Robot {
             Logic.setXElements(x);
         }
     }
-
 
     public static void RobotPlay() {
         int move = Logic.getMove();
@@ -55,11 +52,10 @@ public class Robot {
     }
 
     public static void robotFirst() {
-        if (GameMode.getGameMod().equals(Game.Robot + "-" + Game.Human)||
+        if (GameMode.getGameMod().equals(Game.Robot + "-" + Game.Human) ||
                 GameMode.getGameMod().equals(Game.Robot + "-" + Game.Robot)) {
             Robot.randomMove("X", "O");
             Logic.movePlusOne();
         }
     }
-
 }

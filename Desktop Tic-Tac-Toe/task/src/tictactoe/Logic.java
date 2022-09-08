@@ -94,24 +94,24 @@ public class Logic {
     }
 
 
-    public static void chanceGameMode(JButton butt) {
+    public static void chanceGameMode(JButton button) {
         if (GameMode.getGameMod().equals(Game.Human + "-" + Game.Human)) {
-            playHumanHuman(butt);
+            playHumanHuman(button);
         } else if ((GameMode.getGameMod().equals(Game.Human + "-" + Game.Robot))) {
-            playHumanRobot(butt);
+            playHumanRobot(button);
         } else if ((GameMode.getGameMod().equals(Game.Robot + "-" + Game.Human))) {
-            playRobotHuman(butt);
+            playRobotHuman(button);
         }
     }
 
-    private static void playHumanHuman(JButton butt) {
-        if (!Winners.isStopGame() && butt.getText().equals(" ")) {
+    private static void playHumanHuman(JButton button) {
+        if (!Winners.isStopGame() && button.getText().equals(" ")) {
             if (move % 2 != 0) {
-                butt.setText("O");
-                buttonToOKey(butt);
+                button.setText("O");
+                buttonToOKey(button);
             } else {
-                butt.setText("X");
-                buttonToXKey(butt);
+                button.setText("X");
+                buttonToXKey(button);
             }
             Winners.checkDraw(move);
             Winners.checkWinX(Logic.getHashforCheck());
@@ -120,11 +120,11 @@ public class Logic {
         }
     }
 
-    private static void playHumanRobot(JButton butt) {
-        if (!Winners.isStopGame() && butt.getText().equals(" ")) {
+    private static void playHumanRobot(JButton button) {
+        if (!Winners.isStopGame() && button.getText().equals(" ")) {
             if (move % 2 == 0) {
-                butt.setText("X");
-                buttonToXKey(butt);
+                button.setText("X");
+                buttonToXKey(button);
                 move++;
                 Winners.checkDrawWithRobot(move);
                 Winners.checkWinX(Logic.getHashforCheck());
@@ -140,15 +140,15 @@ public class Logic {
         }
     }
 
-    private static void playRobotHuman(JButton butt) {
-        if (!Winners.isStopGame() && butt.getText().equals(" ")) {
+    private static void playRobotHuman(JButton button) {
+        if (!Winners.isStopGame() && button.getText().equals(" ")) {
             if (move % 2 != 0) {
                 Winners.checkDrawWithRobot(move);
                 Winners.checkWinX(Logic.getHashforCheck());
                 Winners.checkWinO(Logic.getHashforCheck());
                 if (!Winners.isStopGame()) {
-                    butt.setText("O");
-                    buttonToOKey(butt);
+                    button.setText("O");
+                    buttonToOKey(button);
                     move++;
                     Winners.checkDraw(move);
                     Winners.checkWinX(Logic.getHashforCheck());
